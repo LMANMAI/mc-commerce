@@ -11,8 +11,8 @@ import {
   Text,
   Link,
 } from "@chakra-ui/react";
-import { SearchIcon } from "@chakra-ui/icons";
-import { FaUser, FaShoppingCart } from "react-icons/fa";
+//import { SearchIcon } from "@chakra-ui/icons";
+//import { FaUser, FaShoppingCart } from "react-icons/fa";
 //import { useColorModeValue } from "../../ui/color-mode";
 
 const Navbar = () => {
@@ -49,7 +49,7 @@ const Navbar = () => {
         <HStack gap={4}>
           <Link href="/login">
             <Flex align="center" gap={2}>
-              <FaUser />
+              {/* <FaUser /> */}
               {showText && <Text fontSize="sm">Ingresar</Text>}
             </Flex>
           </Link>
@@ -57,7 +57,7 @@ const Navbar = () => {
           <Link href="/carrito">
             <Flex align="center" gap={2}>
               <Box position="relative">
-                <FaShoppingCart />
+                {/* <FaShoppingCart /> */}
                 {/* Badge (puede reemplazarse con Chakra Badge) */}
                 <Box
                   position="absolute"
