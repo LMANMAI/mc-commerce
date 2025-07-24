@@ -11,8 +11,13 @@ import {
 import { useSelector, useDispatch } from "react-redux";
 import type { RootState } from "../../store/store";
 import { useEffect } from "react";
-import { fetchProducts } from "../../features/products/ProductSlice";
+import {
+  /*fetchProducts, */ setProducts,
+} from "../../features/products/ProductSlice";
 import MainLayout from "../../components/layout/MainLayout";
+import useFetch from "../../hooks/useFetch";
+import type { Product } from "../../types";
+import { PRODUCT } from "../../config/constans";
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -22,11 +27,21 @@ const Home = () => {
     error,
   } = useSelector((state: RootState) => state.products);
 
-  useEffect(() => {
-    dispatch(fetchProducts() as any);
-  }, [dispatch]);
+  //consulto al ep los productos
+  const {
+    data,
+    isLoading,
+    error: errorMessage,
+  } = useFetch<Product[]>(PRODUCT.GET_PRODUCTS, {
+    useInitialFetch: true,
+  });
 
-  console.log("desde el home");
+  useEffect(() => {
+    if (data) {
+      console.log(data, "data");
+      dispatch(setProducts(data));
+    }
+  }, [data, dispatch]);
 
   return (
     <MainLayout>

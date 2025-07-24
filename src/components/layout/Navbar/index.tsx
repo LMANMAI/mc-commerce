@@ -12,17 +12,16 @@ import {
   Link,
 } from "@chakra-ui/react";
 //import { SearchIcon } from "@chakra-ui/icons";
-//import { FaUser, FaShoppingCart } from "react-icons/fa";
-//import { useColorModeValue } from "../../ui/color-mode";
+import { FaUser, FaShoppingCart, FaSearch } from "react-icons/fa";
+import { useColorModeValue } from "../../ui/color-mode";
 
 const Navbar = () => {
-  // const bg = useColorModeValue("white", "gray.800");
-
+  const bg = useColorModeValue("white", "gray.800");
   const showText = useBreakpointValue({ base: false, md: true });
 
   return (
-    <Box bg={"red"} px={6} py={4} shadow="sm">
-      <Flex align="center">
+    <Box bg={bg} px={6} py={4} shadow="sm">
+      <Flex align="center" justifyContent={"space-between"}>
         {/* Logo */}
         <Box>
           <Text fontSize="xl" fontWeight="bold" color="brand.500">
@@ -31,7 +30,10 @@ const Navbar = () => {
         </Box>
 
         {/* Search */}
-        <Box flex="1" px={6}>
+        <Box flex="1" px={6} maxW={"500px"}>
+          <InputGroup endElement={<FaSearch />}>
+            <Input placeholder="Ingresa lo que quieras buscar" size={"sm"} />
+          </InputGroup>
           {/* <InputGroup size="md">
             <Input placeholder="Ingresá lo que querés buscar..." />
             <InputRightElement>
@@ -49,7 +51,7 @@ const Navbar = () => {
         <HStack gap={4}>
           <Link href="/login">
             <Flex align="center" gap={2}>
-              {/* <FaUser /> */}
+              <FaUser />
               {showText && <Text fontSize="sm">Ingresar</Text>}
             </Flex>
           </Link>
@@ -57,7 +59,7 @@ const Navbar = () => {
           <Link href="/carrito">
             <Flex align="center" gap={2}>
               <Box position="relative">
-                {/* <FaShoppingCart /> */}
+                <FaShoppingCart />
                 {/* Badge (puede reemplazarse con Chakra Badge) */}
                 <Box
                   position="absolute"
