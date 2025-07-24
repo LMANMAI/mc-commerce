@@ -1,8 +1,9 @@
 import { Box, Flex, HStack, Link, useBreakpointValue } from "@chakra-ui/react";
 import { useColorModeValue } from "../../ui/color-mode";
+import CategoriesMegaMenu from "./modules/Categorias";
 
 const MainMenu = () => {
-  const bg = useColorModeValue("green.500", "gray.700");
+  const bg = useColorModeValue("teal.500", "gray.700");
   const blue = useColorModeValue("white", "gray.100");
   const green = useColorModeValue("whiteAlpha.800", "white");
   const spacing = useBreakpointValue({ base: 2, md: 4 });
@@ -19,14 +20,15 @@ const MainMenu = () => {
           >
             HOME
           </Link>
-          <Link
+          {/* <Link
             href="/categorias"
             fontWeight="medium"
             color={blue}
             _hover={{ color: green }}
           >
-            CATEGORÍAS
-          </Link>
+            CATEGORÍAS */}
+          <CategoriesMegaMenu />
+          {/* </Link> */}
           <Link
             href="/sistema"
             fontWeight="medium"
