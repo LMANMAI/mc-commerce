@@ -10,6 +10,10 @@ import {
   HStack,
   Text,
   Link,
+  Menu,
+  Portal,
+  Button,
+  Image,
 } from "@chakra-ui/react";
 //import { SearchIcon } from "@chakra-ui/icons";
 import { FaUser, FaShoppingCart, FaSearch } from "react-icons/fa";
@@ -29,38 +33,24 @@ const Navbar = () => {
           </Text>
         </Box>
 
-        {/* Search */}
         <Box flex="1" px={6} maxW={"500px"}>
           <InputGroup endElement={<FaSearch />}>
             <Input placeholder="Ingresa lo que quieras buscar" size={"sm"} />
           </InputGroup>
-          {/* <InputGroup size="md">
-            <Input placeholder="Ingresá lo que querés buscar..." />
-            <InputRightElement>
-              <IconButton
-                aria-label="Buscar"
-                icon={<SearchIcon />}
-                size="sm"
-                variant="ghost"
-              />
-            </InputRightElement>
-          </InputGroup> */}
         </Box>
 
-        {/* Account / Cart */}
         <HStack gap={4}>
-          <Link href="/login">
+          <Link href="/">
             <Flex align="center" gap={2}>
               <FaUser />
               {showText && <Text fontSize="sm">Ingresar</Text>}
             </Flex>
           </Link>
 
-          <Link href="/carrito">
+          {/* <Link href="/carrito">
             <Flex align="center" gap={2}>
               <Box position="relative">
                 <FaShoppingCart />
-                {/* Badge (puede reemplazarse con Chakra Badge) */}
                 <Box
                   position="absolute"
                   top="-1"
@@ -76,7 +66,72 @@ const Navbar = () => {
               </Box>
               {showText && <Text fontSize="sm">Mi carrito</Text>}
             </Flex>
-          </Link>
+          </Link> */}
+          <Menu.Root>
+            <Menu.Trigger
+              as={Flex}
+              /*align="center" */ gap={2}
+              cursor="pointer"
+            >
+              <Box position="relative">
+                <FaShoppingCart />
+                <Box
+                  position="absolute"
+                  top="-1"
+                  right="-2"
+                  bg="green.400"
+                  color="white"
+                  fontSize="xs"
+                  px={1}
+                  borderRadius="full"
+                >
+                  1
+                </Box>
+              </Box>
+              {showText && <Text fontSize="sm">Mi carrito</Text>}
+            </Menu.Trigger>
+
+            <Portal>
+              <Menu.Positioner
+                w="300px"
+                p={4}
+                bg="white"
+                shadow="lg"
+                borderRadius="md"
+              >
+                <Flex gap={3}>
+                  <Image
+                    src="https://via.placeholder.com/60"
+                    alt="Producto"
+                    boxSize="60px"
+                    objectFit="cover"
+                  />
+                  <Box>
+                    <Text fontWeight="semibold">Bajada Laser B&N</Text>
+                    <Text fontSize="sm" color="gray.600">
+                      $11.169,00
+                    </Text>
+                  </Box>
+                </Flex>
+
+                {/* <Divider my={3} /> */}
+
+                <Flex justify="space-between" fontWeight="bold">
+                  <Text>Subtotal:</Text>
+                  <Text>$11.169,00</Text>
+                </Flex>
+
+                <HStack mt={4}>
+                  <Button size="sm" colorScheme="yellow" flex="1">
+                    🛒 Ver carrito
+                  </Button>
+                  <Button size="sm" colorScheme="gray" flex="1">
+                    ✔ Finalizar
+                  </Button>
+                </HStack>
+              </Menu.Positioner>
+            </Portal>
+          </Menu.Root>
         </HStack>
       </Flex>
     </Box>

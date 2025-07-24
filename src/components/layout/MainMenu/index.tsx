@@ -20,15 +20,7 @@ const MainMenu = () => {
           >
             HOME
           </Link>
-          {/* <Link
-            href="/categorias"
-            fontWeight="medium"
-            color={blue}
-            _hover={{ color: green }}
-          >
-            CATEGORÍAS */}
           <CategoriesMegaMenu />
-          {/* </Link> */}
           <Link
             href="/sistema"
             fontWeight="medium"

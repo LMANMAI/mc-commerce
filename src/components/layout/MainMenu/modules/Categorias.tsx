@@ -1,25 +1,16 @@
-import {
-  Box,
-  Button,
-  Menu,
-  //   MenuButton,
-  //   MenuList,
-  Portal,
-  Text,
-  Stack,
-  VStack,
-} from "@chakra-ui/react";
+import { Box, Menu, Portal, Text, VStack, Link } from "@chakra-ui/react";
 
 const CategoriesMegaMenu = () => {
   return (
-    <Menu.Root /*isLazy*/>
+    <Menu.Root>
       <Menu.Trigger
-        as={Button}
-        //variant="ghost"
-        //rightIcon={<ChevronDownIcon />}
+        as={Link}
         _hover={{ bg: "teal.600" }}
         _expanded={{ bg: "teal.600" }}
         color="white"
+        fontSize={"14px"}
+        textTransform={"uppercase"}
+        fontWeight="medium"
       >
         Categorías
       </Menu.Trigger>
@@ -27,7 +18,7 @@ const CategoriesMegaMenu = () => {
       <Portal>
         <Menu.Positioner
           p={6}
-          minW="800px"
+          minW="1000px"
           borderRadius="md"
           boxShadow="lg"
           display="flex"
@@ -35,9 +26,9 @@ const CategoriesMegaMenu = () => {
           alignItems="flex-start"
           gap={20}
           zIndex="popover"
+          bg={"white"}
         >
-          {/* COLUMNA 1 - IMPRENTA */}
-          <Box>
+          <Box width={"350px"}>
             <Text fontWeight="bold" mb={2}>
               Imprenta
             </Text>
@@ -55,12 +46,10 @@ const CategoriesMegaMenu = () => {
               <Text fontSize="sm">Sellos</Text>
               <Text fontSize="sm">Puntillado</Text>
               <Text fontSize="sm">Dato variable</Text>
-              {/* Agregá más ítems si querés */}
             </VStack>
           </Box>
 
-          {/* COLUMNA 2 - LIBRERÍA */}
-          <Box>
+          <Box width={"150px"}>
             <Text fontWeight="bold" mb={2}>
               Librería
             </Text>

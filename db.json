@@ -3,7 +3,7 @@
     {
       "id": "1",
       "name": "Anillados",
-      "image": "/images/anillados.jpg",
+      "image": "https://editorial.unc.edu.ar/wp-content/uploads/sites/33/2022/09/placeholder.png",
       "description": "Servicio de anillado en espiral plástico o metálico.",
       "category": "Impresiones",
       "price": 500
@@ -11,7 +11,7 @@
     {
       "id": "2",
       "name": "Autorización de CAI",
-      "image": "/images/autorizacion-cai.jpg",
+      "image": "https://editorial.unc.edu.ar/wp-content/uploads/sites/33/2022/09/placeholder.png",
       "description": "Talonarios con autorización de CAI para facturación manual.",
       "category": "Formularios",
       "price": 750
@@ -19,7 +19,7 @@
     {
       "id": "3",
       "name": "Bajada Laser B&N",
-      "image": "/images/bajada-laser-bn.jpg",
+      "image": "https://editorial.unc.edu.ar/wp-content/uploads/sites/33/2022/09/placeholder.png",
       "description": "Impresión láser en blanco y negro en diferentes gramajes.",
       "category": "Impresiones",
       "price": 300
@@ -27,7 +27,7 @@
     {
       "id": "4",
       "name": "Bajada Láser Color",
-      "image": "/images/bajada-laser-color.jpg",
+      "image": "https://editorial.unc.edu.ar/wp-content/uploads/sites/33/2022/09/placeholder.png",
       "description": "Impresión láser a color de alta calidad.",
       "category": "Impresiones",
       "price": 600
@@ -35,7 +35,7 @@
     {
       "id": "5",
       "name": "Bajada Láser Color con Terminación",
-      "image": "/images/bajada-color-terminacion.jpg",
+      "image": "https://editorial.unc.edu.ar/wp-content/uploads/sites/33/2022/09/placeholder.png",
       "description": "Impresión láser color con plastificado o laminado.",
       "category": "Impresiones",
       "price": 900
@@ -43,7 +43,7 @@
     {
       "id": "6",
       "name": "Carpetas",
-      "image": "/images/carpetas.jpg",
+      "image": "https://editorial.unc.edu.ar/wp-content/uploads/sites/33/2022/09/placeholder.png",
       "description": "Carpetas personalizadas con impresión a todo color.",
       "category": "Papelería",
       "price": 1200
@@ -51,7 +51,7 @@
     {
       "id": "7",
       "name": "Cartón",
-      "image": "/images/carton.jpg",
+      "image": "https://editorial.unc.edu.ar/wp-content/uploads/sites/33/2022/09/placeholder.png",
       "description": "Cartón rígido para soporte de documentos o presentaciones.",
       "category": "Materiales",
       "price": 350
@@ -59,7 +59,7 @@
     {
       "id": "8",
       "name": "Copia de Planos",
-      "image": "/images/copia-planos.jpg",
+      "image": "https://editorial.unc.edu.ar/wp-content/uploads/sites/33/2022/09/placeholder.png",
       "description": "Copias y ampliaciones de planos en tamaño A3 a A0.",
       "category": "Arquitectura",
       "price": 800

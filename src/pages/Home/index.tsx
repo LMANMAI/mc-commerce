@@ -7,6 +7,7 @@ import {
   VStack,
   Spinner,
   Center,
+  Stack,
 } from "@chakra-ui/react";
 import { useSelector, useDispatch } from "react-redux";
 import type { RootState } from "../../store/store";
@@ -50,12 +51,24 @@ const Home = () => {
           Home
         </Heading>
 
-        {loading ? (
-          <Center py={20}>
+        {loading || isLoading ? (
+          <Stack
+            py={20}
+            direction={"column"}
+            justifyContent={"center"}
+            alignItems={"center"}
+          >
             <Spinner size="xl" />
-          </Center>
+            <Text>Obteniendo productos</Text>
+          </Stack>
         ) : error ? (
           <Text color="red.500">Error: {error}</Text>
+        ) : products.length === 0 ? (
+          <Center py={20}>
+            <Text fontSize="lg" color="gray.500">
+              No se encontraron productos.
+            </Text>
+          </Center>
         ) : (
           <SimpleGrid columns={{ base: 1, sm: 2, md: 3, lg: 4 }} gap={6}>
             {products.map((product) => (
@@ -68,7 +81,7 @@ const Home = () => {
                 _hover={{ shadow: "md" }}
               >
                 <Image
-                  src={product.image || "https://via.placeholder.com/300"}
+                  src={product.image || ""}
                   alt={product.name}
                   objectFit="cover"
                   width="100%"
@@ -76,9 +89,9 @@ const Home = () => {
                 />
                 <VStack gap={2} p={4} align="start">
                   <Text fontWeight="bold">{product.name}</Text>
-                  <Text color="gray.600">
+                  {/* <Text color="gray.600">
                     ${product.price.toLocaleString()}
-                  </Text>
+                  </Text> */}
                 </VStack>
               </Box>
             ))}
