@@ -1,11 +1,8 @@
 import {
   Box,
   Flex,
-  Spacer,
-  IconButton,
   Input,
   InputGroup,
-  //   InputRightElement,
   useBreakpointValue,
   HStack,
   Text,
@@ -15,14 +12,14 @@ import {
   Button,
   Image,
 } from "@chakra-ui/react";
-//import { SearchIcon } from "@chakra-ui/icons";
 import { FaUser, FaShoppingCart, FaSearch } from "react-icons/fa";
 import { useColorModeValue } from "../../ui/color-mode";
+import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
   const bg = useColorModeValue("white", "gray.800");
   const showText = useBreakpointValue({ base: false, md: true });
-
+  const navigate = useNavigate();
   return (
     <Box bg={bg} px={6} py={4} shadow="sm">
       <Flex align="center" justifyContent={"space-between"}>
@@ -40,33 +37,13 @@ const Navbar = () => {
         </Box>
 
         <HStack gap={4}>
-          <Link href="/">
+          <Link href="/auth">
             <Flex align="center" gap={2}>
               <FaUser />
               {showText && <Text fontSize="sm">Ingresar</Text>}
             </Flex>
           </Link>
 
-          {/* <Link href="/carrito">
-            <Flex align="center" gap={2}>
-              <Box position="relative">
-                <FaShoppingCart />
-                <Box
-                  position="absolute"
-                  top="-1"
-                  right="-2"
-                  bg="green.400"
-                  color="white"
-                  fontSize="xs"
-                  px={1}
-                  borderRadius="full"
-                >
-                  1
-                </Box>
-              </Box>
-              {showText && <Text fontSize="sm">Mi carrito</Text>}
-            </Flex>
-          </Link> */}
           <Menu.Root>
             <Menu.Trigger
               as={Flex}
@@ -79,7 +56,7 @@ const Navbar = () => {
                   position="absolute"
                   top="-1"
                   right="-2"
-                  bg="green.400"
+                  bg="teal.400"
                   color="white"
                   fontSize="xs"
                   px={1}
@@ -122,7 +99,14 @@ const Navbar = () => {
                 </Flex>
 
                 <HStack mt={4}>
-                  <Button size="sm" colorScheme="yellow" flex="1">
+                  <Button
+                    size="sm"
+                    colorScheme="yellow"
+                    flex="1"
+                    onClick={() => {
+                      navigate("/carrito");
+                    }}
+                  >
                     🛒 Ver carrito
                   </Button>
                   <Button size="sm" colorScheme="gray" flex="1">

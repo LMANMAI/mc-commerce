@@ -45,60 +45,58 @@ const Home = () => {
   }, [data, dispatch]);
 
   return (
-    <MainLayout>
-      <Box>
-        <Heading mb={6} size="lg">
-          Home
-        </Heading>
+    <Box>
+      <Heading mb={6} size="lg">
+        Home
+      </Heading>
 
-        {loading || isLoading ? (
-          <Stack
-            py={20}
-            direction={"column"}
-            justifyContent={"center"}
-            alignItems={"center"}
-          >
-            <Spinner size="xl" />
-            <Text>Obteniendo productos</Text>
-          </Stack>
-        ) : error ? (
-          <Text color="red.500">Error: {error}</Text>
-        ) : products.length === 0 ? (
-          <Center py={20}>
-            <Text fontSize="lg" color="gray.500">
-              No se encontraron productos.
-            </Text>
-          </Center>
-        ) : (
-          <SimpleGrid columns={{ base: 1, sm: 2, md: 3, lg: 4 }} gap={6}>
-            {products.map((product) => (
-              <Box
-                key={product.id}
-                borderWidth="1px"
-                borderRadius="md"
-                overflow="hidden"
-                bg="white"
-                _hover={{ shadow: "md" }}
-              >
-                <Image
-                  src={product.image || ""}
-                  alt={product.name}
-                  objectFit="cover"
-                  width="100%"
-                  height="200px"
-                />
-                <VStack gap={2} p={4} align="start">
-                  <Text fontWeight="bold">{product.name}</Text>
-                  {/* <Text color="gray.600">
+      {loading || isLoading ? (
+        <Stack
+          py={20}
+          direction={"column"}
+          justifyContent={"center"}
+          alignItems={"center"}
+        >
+          <Spinner size="xl" />
+          <Text>Obteniendo productos</Text>
+        </Stack>
+      ) : error ? (
+        <Text color="red.500">Error: {error}</Text>
+      ) : products.length === 0 ? (
+        <Center py={20}>
+          <Text fontSize="lg" color="gray.500">
+            No se encontraron productos.
+          </Text>
+        </Center>
+      ) : (
+        <SimpleGrid columns={{ base: 1, sm: 2, md: 3, lg: 4 }} gap={6}>
+          {products.map((product) => (
+            <Box
+              key={product.id}
+              borderWidth="1px"
+              borderRadius="md"
+              overflow="hidden"
+              bg="white"
+              _hover={{ shadow: "md" }}
+            >
+              <Image
+                src={product.image || ""}
+                alt={product.name}
+                objectFit="cover"
+                width="100%"
+                height="200px"
+              />
+              <VStack gap={2} p={4} align="start">
+                <Text fontWeight="bold">{product.name}</Text>
+                {/* <Text color="gray.600">
                     ${product.price.toLocaleString()}
                   </Text> */}
-                </VStack>
-              </Box>
-            ))}
-          </SimpleGrid>
-        )}
-      </Box>
-    </MainLayout>
+              </VStack>
+            </Box>
+          ))}
+        </SimpleGrid>
+      )}
+    </Box>
   );
 };
 
