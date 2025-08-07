@@ -22,7 +22,7 @@ const MainMenu = () => {
           </Link>
           <CategoriesMegaMenu />
           <Link
-            href="/sistema"
+            href="http://localhost:5174/"
             fontWeight="medium"
             color={blue}
             _hover={{ color: green }}

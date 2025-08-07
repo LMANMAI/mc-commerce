@@ -63,6 +63,14 @@
       "description": "Copias y ampliaciones de planos en tamaño A3 a A0.",
       "category": "Arquitectura",
       "price": 800
+    },
+    {
+      "id": "9",
+      "name": "Carpetas",
+      "image": "https://editorial.unc.edu.ar/wp-content/uploads/sites/33/2022/09/placeholder.png",
+      "description": "Copias y ampliaciones de planos en tamaño A3 a A0.",
+      "category": "Arquitectura",
+      "price": 800
     }
   ]
 }
